@@ -72,5 +72,3 @@ while i != 0 :
         all = all - a
         print('осталось: ',all)
         i = all
-
-print('Задание 7')
