@@ -1,4 +1,7 @@
 import math
+# Построить систему классов для описания плоских геометрических фигур: круга, 
+# квадрата, прямоугольника. Предусмотреть методы для создания объектов,
+# перемещения на плоскости.
 class Square(object):
     """описание квадрата"""
     def __init__(self, ldX = 0, ldY = 0, length = 2):
@@ -31,7 +34,6 @@ class Square(object):
             self.ldY = Y
             self.angles.clear()
             return self.angle_coordinates()
-
 
 class Rectangle(object):
     """docstring for Rectangle."""
