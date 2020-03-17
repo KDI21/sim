@@ -32,12 +32,12 @@ class Square(object):
         self.angles.append('(' + str(self.ldX) + ';' + str(self.ldY + self.length) + ')' )
         return self.angles
 
-        def moveTo(self, X, Y):
-            """перемешение квадрата в плоскости"""
-            self.ldX = X
-            self.ldY = Y
-            self.angles.clear()
-            return self.angle_coordinates()
+    def moveTo(self, X, Y):
+        """перемешение квадрата в плоскости"""
+        self.ldX = X
+        self.ldY = Y
+        self.angles.clear()
+        return self.angle_coordinates()
 
 class Rectangle(object):
     """docstring for Rectangle."""
