@@ -4,33 +4,39 @@ class Fractions(object):
        Число должно быть представлено двумя полями: целая часть и дробная часть.
        Реализовать арифметические операции сложения, вычитания, умножения и
        операции сравнения. Проверить эти методы."""
-
-    def created_numbers(self):
+    def __init__(self):
         self.wholePart = random.randint(-100,100)
         self.fractionPart = random.randint(0,100)
         self.numbers  = str(self.wholePart)+'.'+str(self.fractionPart)
-        return self.numbers
+
     def to_double(self):
         return float(self.created_numbers())
-    def fold(self, a, b):
-        return (float(a) + float(b))
+
+    def sum(self, a, b):
+        self.sum = (float(frac1.numbers) + float(frac2.numbers))
+        return  self.sum
+
     def subtract(self, a, b):
-        return (float(a) - float(b))
+        self.subtract = (float(frac1.numbers) - float(frac2.numbers))
+        return self.subtract
+
     def multip(self, a, b):
-        return (float(a) * float(b))
+        self.multip = (float(frac1.numbers) * float(frac2.numbers))
+        return self.multip
+
     def compar(self, a, b):
-        if a == b:
+        if frac1.numbers == frac2.numbers:
             return ' a == b'
-        elif a < b:
+        elif frac1.numbers < frac2.numbers:
             return 'a < b'
         else:
             return 'a > b'
-frac = Fractions()
-a = frac.created_numbers()
-print('число а = ',a)
-b = frac.created_numbers()
-print('число b = ',b)
-print('a + b = ',frac.fold(a, b))
-print('a - b = ', frac.subtract(a, b))
-print('a * b = ', frac.multip(a,b))
-print('a vs b: ', frac.compar(a, b))
+            
+frac1 = Fractions()
+frac2 = Fractions()
+print('число а = ',frac1.numbers)
+print('число b = ',frac2.numbers)
+print('a + b = ', frac1.sum(frac1, frac2))
+print('a - b = ', frac1.subtract(frac1, frac2))
+print('a * b = ', frac1.multip(frac1, frac2))
+print('a vs b: ', frac1.compar(frac1, frac2))

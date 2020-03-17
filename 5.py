@@ -1,5 +1,5 @@
 import math
-# Построить систему классов для описания плоских геометрических фигур: круга, 
+# Построить систему классов для описания плоских геометрических фигур: круга,
 # квадрата, прямоугольника. Предусмотреть методы для создания объектов,
 # перемещения на плоскости.
 class Square(object):
@@ -10,15 +10,19 @@ class Square(object):
         self.ldY = ldY
         self.length = length
         self.angles = []
+
     def area_sqr (self):
         """ Определение площади"""
         return self.length ^ 2
+
     def perim_sqr(self):
         """Определение периметра"""
         return self.length*4
+
     def diagonal_sqr(self):
         """Определение диагонали"""
         return math.sqrt(self.length * self.length * 2)
+
     def angle_coordinates(self):
         """Определение координат углов квадрата. Координаты углов начинают
            определяться с левого нижнего, против часовой стрелки """
@@ -45,15 +49,19 @@ class Rectangle(object):
         self.length_A = length_A
         self.length_B = length_B
         self.angles = []
+
     def area_rec(self):
         """ Определение площади"""
         return   self.length_A * self.length_B
+
     def perim_rec(self):
         """Определение периметра"""
         return (self.length_A + self.length_B) * 2
+
     def diagonal_rec(self):
         """Определение диагонали"""
         return math.sqrt(self.length_A * self.length_A + self.length_B * self.length_B)
+
     def angle_coordinates(self):
         """Определение координат углов прямоугольника. Координаты углов начинают
            определяться с левого нижнего, против часовой стрелки """
@@ -62,6 +70,7 @@ class Rectangle(object):
         self.angles.append('(' + str(self.ldX + self.length_A) + ';' + str(self.ldY + self.length_B) + ')' )
         self.angles.append('(' + str(self.ldX) + ';' + str(self.ldY + self.length_B) + ')' )
         return self.angles
+
     def moveTo(self, X, Y):
         """перемешение прямоугольника в плоскости"""
         self.ldX = X
@@ -73,17 +82,19 @@ class Circle(object):
     """docstring for Circle."""
 
     def __init__(self, x, y, r ):
-
         super(Circle, self).__init__()
         self.X = x
         self.Y = y
         self.R = r
+
     def area_crl(self):
         """Определение площади"""
         return 3.14 * self.R * self.R
+
     def perim_crl(self):
         """Определение периметра"""
         return 2 * 3.14 * self.R
+
     def moveTo(self, x, y):
         self.X = x
         self.Y = y
